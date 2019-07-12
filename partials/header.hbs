@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!--Bootstrap css -->
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  type="text/css">
+  <link rel="shortcut icon"  href="/img/logo.ico">
+  <title>{{tituloPagina}}</title>       	
+</head>
+
+<body>
+
+  <div class="container" > 
+  <div class="jumbotron">   
+        <img src="img/banner.png" class="img-fluid" >
+  </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <img src="img/logo1.png" class="img-fluid" >
+        </div> 
+         </div> 
+        
+<br>
+  <nav class="navbar navbar-expand-lg navbar" style="background-color: #d6b773;"">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="/">Inicio</a>
+          </li>      
+         
+           <li class="nav-item">
+            <a class="nav-link" href="/registrar"> Registrate</a>
+     
+                 </li>    
+                  <li class="nav-item">
+            <a class="nav-link" href="/iniciar" target="_blank">Iniciar sesion</a>
+          </li> 
+          
+          {{#if sesion}}
+               </li>
+             <li class="nav-item">
+            <a class="nav-link" href="/registroProducto">registrar productos</a>
+            <a class="nav-link" href="/shirt">registrar productos</a>
+          </li>
+          <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Ropa de niños
+  </button>
+     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+         <a class="dropdown-item" href="shirt">Camisa</a>
+         <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+    </div> 
+        </li>
+             <li class="nav-item">
+            <a class="nav-link" href="/carrito">Mi carrito</a>
+          </li>           
+        </ul> 
+        <form class="form-inline my-2 my-lg-0" action="/salir" method="get">
+             <br>
+             <img src="img/user.png" width="50px" height="50px">                    
+          <button class="btn btn-danger my-2 my-sm-0" type="submit">Salir</button>
+        </form>
+
+    
+       
+        {{else}}
+        </ul> 
+         <form class="form-inline my-2 my-lg-0" action="/iniciar" method="post">
+          <input class="form-control mr-sm-2" type="text" name="email" placeholder="Nombre de usuario" >  
+           <input class="form-control mr-sm-2" type="password" name="password" placeholder="Contraseña" > <br>                
+          <button class="btn btn-primary my-2 my-sm-0" type="submit">Ingresar</button>
+        </form>  
+       
+        
+        {{/if}}
+
+      </div>
+    </nav>
